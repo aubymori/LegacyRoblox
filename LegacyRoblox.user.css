@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Legacy Roblox
-@version      2.0.0
+@version      2.0.1
 @namespace    aubymori
 @description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       aubymori
@@ -4263,19 +4263,19 @@
             font-family: 'Source Sans Pro';
             font-style: normal;
             font-weight: 300;
-            src: local("Source Sans Pro Light"), local("SourceSansPro-Light"), url("/fonts/source-sans-pro-v9-latin-300.woff2") format("woff2"), url("/fonts/source-sans-pro-v9-latin-300.woff") format("woff"), url("/fonts/source-sans-pro-v9-latin-300.svg#SourceSansPro") format("svg");
+            src: url("/fonts/source-sans-pro-v9-latin-300.woff2") format("woff2"), url("/fonts/source-sans-pro-v9-latin-300.woff") format("woff"), url("/fonts/source-sans-pro-v9-latin-300.svg#SourceSansPro") format("svg");
         }
         @font-face {
             font-family: 'Source Sans Pro';
             font-style: normal;
             font-weight: 400;
-            src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url("/fonts/source-sans-pro-v9-latin-regular.woff2") format("woff2"), url("/fonts/source-sans-pro-v9-latin-regular.woff") format("woff"), url("/fonts/source-sans-pro-v9-latin-regular.svg#SourceSansPro") format("svg");
+            src: url("/fonts/source-sans-pro-v9-latin-regular.woff2") format("woff2"), url("/fonts/source-sans-pro-v9-latin-regular.woff") format("woff"), url("/fonts/source-sans-pro-v9-latin-regular.svg#SourceSansPro") format("svg");
         }
         @font-face {
             font-family: 'Source Sans Pro';
             font-style: normal;
             font-weight: 600;
-            src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url("/fonts/source-sans-pro-v9-latin-600.woff2") format("woff2"), url("/fonts/source-sans-pro-v9-latin-600.woff") format("woff"), url("/fonts/source-sans-pro-v9-latin-600.svg#SourceSansPro") format("svg");
+            src: url("/fonts/source-sans-pro-v9-latin-600.woff2") format("woff2"), url("/fonts/source-sans-pro-v9-latin-600.woff") format("woff"), url("/fonts/source-sans-pro-v9-latin-600.svg#SourceSansPro") format("svg");
         }
         .gotham-font, .gotham-font .h1, .gotham-font .h2, .gotham-font .h3, .gotham-font .h4, .gotham-font .h5, .gotham-font .h6, .gotham-font h1, .gotham-font h2, .gotham-font h3, .gotham-font h4, .gotham-font h5, .gotham-font h6, .gotham-font .text, .gotham-font body, .gotham-font button, .gotham-font html, .gotham-font input, .gotham-font pre, .gotham-font select, .gotham-font textarea, 	.gotham-font.chat-container .btn-control-xs, .gotham-font .chat-container .btn-control-xs, .gotham-font.chat-container .chat-search-input, .gotham-font .chat-container .chat-search-input, .gotham-font .chat-main .btn-control-md, .gotham-font .create-chat-container .select-friends-btns .select-friends-cancel, .gotham-font .create-chat-container .select-friends-btns .select-friends-save, .gotham-font .details-btns-fixed button, .gotham-font .details-btns button, .gotham-font .details-container .details-input, .gotham-font .details-header-container .details-input, .gotham-font .dialog-container .dialog-input, .gotham-font .game-item-container .game-btn, .gotham-font .group-dialog .group-name-editor .group-name-input, .gotham-font .group-dialog .group-name-editor .group-name-save, .gotham-font .group-dialog .play-together-game-editor .group-name-input, .gotham-font .group-dialog .play-together-game-editor .group-name-save, .stack .card-list .rbx-private-game-server-item .card-item .game-server-details .text-name span {
             font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
@@ -7354,16 +7354,22 @@
         border-radius: 0
     }
     
-    .light-theme .notification-stream-container .notification-content-view {
-        background-color: #e3e3e3;
+    .light-theme #notification-stream-base-view,
+    .light-theme .notification-stream-container .notification-content-view,
+    .light-theme .notification-stream-body, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body {
+        background-color: #fff !important;
         color: #191919;
     }
+    #notification-stream-base-view when (@BoxShadows = 1) {
+        box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
+    }
+    
     .dark-theme .notification-stream-container .notification-content-view {
         background-color: #1c1c1c;
         color: #e6e6e6;
     }
     
-    .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list {
+    .light-theme .new-notification-stream-2022 .notification-stream-container .notification-co,ntent-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list {
         background: transparent;
     }
     .new-notification-stream-2022 .notification-stream-body .notification-stream-data .notification-stream-scrollbar .notification-stream-list {
@@ -10973,6 +10979,34 @@
     #navbar-search-input when (@SourceSansPro = 1)
     {
         font-weight: 300;
+    }
+    
+    .legacy-notif-base {
+        .game-icon-container {
+            border-radius: 0;
+        }
+        
+        .light-theme & {
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .text-content {
+            & > span {
+                &:first-child {
+                    font-size: 14px;
+                    line-height: 125%;
+                    
+                    b {
+                        color: #00a2ff;
+                        font-weight: 500;
+                    }
+                }
+                
+                .light-theme &:last-child {
+                    color: #b8b8b8;
+                }
+            }
+        }
     }
     }
     
