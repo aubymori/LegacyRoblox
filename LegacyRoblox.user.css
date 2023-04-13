@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Legacy Roblox
-@version      2.0.1
+@version      2.0.2
 @namespace    aubymori
 @description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       aubymori
@@ -2604,6 +2604,11 @@
         font-size: 12px;
         font-weight: 400;
         display: block;
+        
+        & when (@SourceSansPro = 1) {
+            font-size: 24px;
+            font-weight: 300;
+        }
     }
     .profile-header .header-details .details-actions {
         float: right;
