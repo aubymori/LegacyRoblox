@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Legacy Roblox
-@version      2.0.4
+@version      2.0.5
 @namespace    aubymori
 @description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       aubymori
@@ -7219,12 +7219,12 @@
             height: 162px;
         }
         .game-card-link .game-card-info .no-vote, .game-card-link .game-card-info .playing-counts-label, .game-card-link .game-card-info .vote-percentage-label {
-            padding: 0;
+            padding: 0 6px;
         }
     }
     
     .game-card-link .game-card-info .playing-counts-label {
-        padding-left: 0;
+        padding-left: 6px;
     }
     
     /*/ Revert Server Playerlist /*/
@@ -11030,6 +11030,16 @@
                 }
             }
         }
+    }
+    
+    .game-card-info {
+        padding: 0 6px;
+    }
+    
+    .game-card-link [class="info-label"] {
+        font-weight: 500 !important;
+        font-size: 12px !important;
+        color: #757575 !important;
     }
     }
     
