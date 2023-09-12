@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Legacy Roblox
-@version      2.0.6
+@version      2.0.7
 @namespace    aubymori
 @description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       aubymori
@@ -11034,6 +11034,7 @@
     
     .game-card-info {
         padding: 0 6px;
+        position: absolute !important;
     }
     
     .game-card-link [class="info-label"] {
